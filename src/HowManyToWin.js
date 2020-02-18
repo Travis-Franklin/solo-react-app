@@ -4,25 +4,25 @@ class HowManyToWin extends React.Component{
     constructor(props){
         super(props);
         this.state = {
-            value: "",
+            number : "1",
         };
-        // this.handleChange = this.handleChange.bind(this);
+        this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
     handleSubmit(event){
         event.preventDefault();
     }
     handleChange(event){
-        event.handleChange();
+        this.setState({number: event.target.value});
     }
 
-    _SendHowMany = () => {
-        console.log(this.state.value, 'line 11');
-        let userInput = event.target.value;
-        this.setState({
-            value: userInput,
-        })
-    }
+    // _SendHowMany = () => {
+    //     console.log(this.state.number, 'line 11');
+    //     let userInput = event.target.number;
+    //     this.setState({
+    //         number: userInput,
+    //     })
+    // }
 
 
 
@@ -30,11 +30,12 @@ class HowManyToWin extends React.Component{
         return(
             <div>
                <form onSubmit={this.handleSubmit}>
-                   <input type="number">
+                   <input type="number" onChange={this.handleChange}>
                    </input>
-                   <button type="submit" onClick={this._SendHowMany}></button>
+                   <button type="submit">
+                   </button>
                 </form>
-               <h1>{this.state.value} How Many to Win</h1> 
+               <h1>{this.state.number} How Many to Win</h1> 
             </div>
         )
     }
