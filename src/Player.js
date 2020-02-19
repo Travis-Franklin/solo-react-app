@@ -5,7 +5,9 @@ class Player extends React.Component{
         super(props);
         this.state = {
             whom: "Player 1",
-            whomSaved: ""
+            whomSaved: "",
+            saveAmountOfPlayers: ""
+    
         };
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -26,8 +28,10 @@ class Player extends React.Component{
     }
 
     render() {
+        console.log(this.props.saveAmountOfPlayers);
         return (
             <div>
+                {}
                 <form onSubmit={this.handleSubmit}>
                     <input type="text" onChange={this.handleChange}>
                     </input>
