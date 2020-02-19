@@ -10,7 +10,7 @@ class Counter extends React.Component{
     render () {
         return (
         <div>
-        <button onClick ={this._incrementValue}>{this.state.value}+</button>
+        <button onClick ={this._incrementValue}>+</button>
         <h1>{this.state.value}</h1>
         </div>)
     }
