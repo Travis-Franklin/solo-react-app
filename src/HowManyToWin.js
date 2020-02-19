@@ -24,8 +24,6 @@ class HowManyToWin extends React.Component{
         })
     }
 
-
-
     render () {
         return(
             <div>
