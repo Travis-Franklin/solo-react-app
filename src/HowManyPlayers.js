@@ -21,7 +21,7 @@ class HowManyPlayers extends React.Component{
     }
 
     _HowManyPlayers= () =>{
-        console.log(this.state.amountOfPlayers);
+        // console.log(this.state.amountOfPlayers);
         this.setState({
             saveAmountOfPlayers: this.state.amountOfPlayers
         })
@@ -30,7 +30,6 @@ class HowManyPlayers extends React.Component{
     render (){
         return (
             <div>
-                <Player saveAmountOfPlayers={this.state.saveAmountOfPlayers}/>
                 <form onSubmit={this.handleSubmit}>
                 <input type="number" onChange={this.handleChange}>
                 
@@ -38,6 +37,7 @@ class HowManyPlayers extends React.Component{
 
                 <button onClick ={(e) => this._HowManyPlayers()}>Amount of Players</button>
                 </form>
+                <Player saveAmountOfPlayers={this.state.saveAmountOfPlayers}/>
             </div>
         )
     }
