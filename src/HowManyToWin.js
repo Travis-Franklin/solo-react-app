@@ -16,6 +16,9 @@ class HowManyToWin extends React.Component{
     handleChange(event){
         this.setState({number: event.target.value});
     }
+    HowManyLeft(){
+        // this.state.saveNumber-total of all candidates combined
+    }
 
     _SendHowMany = () => {
         console.log(this.state.number);

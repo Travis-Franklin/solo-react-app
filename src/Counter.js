@@ -1,5 +1,8 @@
 import React from 'react';
 
+//receive props from player and the write functions, add button to increment, decrement
+
+
 class Counter extends React.Component{
     constructor(props) {
         super(props);
