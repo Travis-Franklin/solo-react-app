@@ -5,8 +5,6 @@ class Player extends React.Component{
     constructor(props){
         super(props);
         this.state = {
-            // whom: "Player 1",
-            // whomSaved: "",
             amountOfPlayers: "1",
             players: [{            
                 whom: "Player 1",
@@ -14,8 +12,6 @@ class Player extends React.Component{
                 scores: ""}]
     
         };
-        // this.handleChange = this.handleChange.bind(this);
-        // this.handleSubmit = this.handleSubmit.bind(this);
 
     }
 
@@ -32,22 +28,11 @@ class Player extends React.Component{
     handleChange = (e, index) =>{
         console.log(`change:${index}`)
         console.log(e.target.value)
-        // this.handleChange.bind(this);
         let tempPlayer = [...this.state.players]
         tempPlayer[index].whom = e.target.value
         this.setState({players: tempPlayer})
         
     }
-
-    // handleSubmit = (e, index) =>{
-    //     console.log(`change:${index}`)
-    //     console.log(e.target.value)
-    //     // this.handleChange.bind(this);
-    //     let tempPlayer = [...this.state.players]
-    //     tempPlayer[index].whom = e.target.value
-    //     this.setState({players: tempPlayer})
-        
-    // }
 
     createNewPlayer(){
         let tempPlayer = [...this.state.players]
@@ -58,17 +43,7 @@ class Player extends React.Component{
                 scores: ""})
         }
         this.setState({players: tempPlayer})
-        // console.log(tempPlayer);
     }
-
-
-    // handleSubmit(event){
-    //     event.preventDefault();
-    // }
-
-    // handleChange(event){
-    //     this.setState({whom: event.target.value});
-    // }
 
     _AddPlayer = (e, index) => {
         e.preventDefault();

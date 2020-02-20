@@ -20,14 +20,12 @@ class HowManyPlayers extends React.Component{
     }
 
     _HowManyPlayers= () =>{
-        // console.log(this.state.amountOfPlayers);
         this.setState({
             saveAmountOfPlayers: this.state.amountOfPlayers
         })
         
     }
     render (){
-        // console.log(this.props)
         return (
             <div className="PlayerClass">
                 <div>

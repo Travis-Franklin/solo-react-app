@@ -5,9 +5,9 @@ class HowManyToWin extends React.Component{
     constructor(props){
         super(props);
         this.state = {
-            number : "1",
-            saveNumber: "",
-            numberRemaining: ""
+            number : 0,
+            saveNumber: 0,
+            numberRemaining: 0
         };
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -18,26 +18,22 @@ class HowManyToWin extends React.Component{
     handleChange(event){
         this.setState({number: event.target.value});
     }
-    HowManyLeft(){
-        // this.state.saveNumber-total of all candidates combined sta
-    }
 
     _SendHowMany = () => {
-        console.log(this.state.number);
         this.setState({
-            saveNumber: this.state.number,
-            numberRemaining: this.state.number
+            saveNumber: Number(this.state.number),
+            numberRemaining: Number(this.state.number)
         })
     }
 
     _incrementTotalValue = () => {
         this.setState({
-            value: this.state.numberRemaining + 1
+            numberRemaining: this.state.numberRemaining + 1
         });
     }
     _decrementTotalValue = () => {
         this.setState({
-            value: this.state.numberRemaining - 1
+            numberRemaining: this.state.numberRemaining - 1
         });
     }
 
