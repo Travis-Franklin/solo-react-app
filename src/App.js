@@ -16,11 +16,6 @@ function App() {
         Presidential Primaries.</h2>
       <HowManyToWin
       />
-      {/* <Counter/>
-      <Player
-        whom="Travis"
-        how="Hi there"
-      /> */}
       <HowManyPlayers/>
     </div>
   );

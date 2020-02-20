@@ -1,4 +1,5 @@
 import React from 'react';
+import Counter from './Counter';
 
 class Player extends React.Component{
     constructor(props){
@@ -91,7 +92,7 @@ class Player extends React.Component{
                             <button type="submit" onClick={(e) => this._AddPlayer(e, index)}>Save Player Name</button>
                         </form>
                         <h1>{this.state.players[index].whomSaved}</h1>
-                        Counter player.score
+                        <Counter/>
                             </div>
                     )}
         
