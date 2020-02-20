@@ -9,7 +9,9 @@ class Player extends React.Component{
             players: [{            
                 whom: "Player 1",
                 whomSaved: "",
-                scores: ""}]
+                scores: 0,
+                color: ""
+            }]
     
         };
 
@@ -26,12 +28,21 @@ class Player extends React.Component{
         }
      }
     handleChange = (e, index) =>{
-        console.log(`change:${index}`)
-        console.log(e.target.value)
+        // console.log(`change:${index}`)
+        // console.log(e.target.value)
         let tempPlayer = [...this.state.players]
         tempPlayer[index].whom = e.target.value
         this.setState({players: tempPlayer})
-        
+    }
+
+    handleChangeColor = (e, index) =>{
+        // console.log(`change:${index}`)
+        // console.log(e.target.value)
+        let tempPlayer = [...this.state.players]
+        tempPlayer[index].color = e.target.value
+        this.setState({players: tempPlayer})
+        // console.log(e.target.value)
+        console.log(this.state.players)
     }
 
     createNewPlayer(){
@@ -40,7 +51,10 @@ class Player extends React.Component{
             tempPlayer.push({            
                 whom: "Player",
                 whomSaved: "",
-                scores: ""})
+                scores: 0,
+                color: "",
+                value: 0
+            })
         }
         this.setState({players: tempPlayer})
     }
@@ -57,7 +71,7 @@ class Player extends React.Component{
 
     render() {
         
-        console.log(this.props);
+        // console.log(this.props);
         return (
             <div >
                     {this.state.players.map((player, index) => 
@@ -67,6 +81,12 @@ class Player extends React.Component{
                             </input>
                             <button type="submit" onClick={(e) => this._AddPlayer(e, index)}>Save Player Name</button>
                         </form>
+                                    <select id="color" onChange={(e)=> this.handleChangeColor(e, index)}>
+                                        <option value="red">red</option>
+                                        <option value="green">green</option>
+                                        <option value="blue">blue</option>
+                                        <option value="purple">purple</option>
+                                    </select>
                         <h1>{this.state.players[index].whomSaved}</h1>
                         <Counter _decrementTotalValue={this.props._decrementTotalValue} _incrementTotalValue = {this.props._incrementTotalValue}/>
                             </div>
