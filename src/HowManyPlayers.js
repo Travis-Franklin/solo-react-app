@@ -1,6 +1,5 @@
 import React from 'react';
 import Player from './Player';
-import Counter from './Counter';
 
 class HowManyPlayers extends React.Component{
     constructor(props){
@@ -28,16 +27,19 @@ class HowManyPlayers extends React.Component{
         
     }
     render (){
+        // console.log(this.props)
         return (
-            <div>
-                <form onSubmit={this.handleSubmit}>
+            <div className="PlayerClass">
+                <div>
+                <form className="amountOfPlayersForm" onSubmit={this.handleSubmit}>
                 <input type="number" onChange={this.handleChange}>
                 
                 </input>
 
-                <button onClick ={(e) => this._HowManyPlayers()}>Amount of Players</button>
+                <button  onClick ={(e) => this._HowManyPlayers()}>Amount of Players</button>
                 </form>
-                <Player saveAmountOfPlayers={this.state.saveAmountOfPlayers}/>
+                </div>
+                <Player saveAmountOfPlayers={this.state.saveAmountOfPlayers} _decrementTotalValue={this.props._decrementTotalValue} _incrementTotalValue = {this.props._incrementTotalValue}/>
             </div>
         )
     }

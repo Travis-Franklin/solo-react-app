@@ -16,7 +16,7 @@ function App() {
         Presidential Primaries.</h2>
       <HowManyToWin
       />
-      <HowManyPlayers/>
+          
     </div>
   );
 }

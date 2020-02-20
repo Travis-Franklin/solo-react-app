@@ -11,3 +11,18 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.PlayersAndChart {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.amountOfPlayersForm {
+  padding-bottom: 40px;
+  /* font-size: 30px; */
+}
+
+.playerBox {
+  outline: 1px red solid;
+}

@@ -81,18 +81,19 @@ class Player extends React.Component{
     }
 
     render() {
-        // console.log(this.props.saveAmountOfPlayers);
+        
+        console.log(this.props);
         return (
-            <div>
+            <div >
                     {this.state.players.map((player, index) => 
-                        <div>
-                        <form>
+                        <div className="playerBox">
+                        <form >
                             <input type="text" onChange={(e)=> this.handleChange(e, index)}>
                             </input>
                             <button type="submit" onClick={(e) => this._AddPlayer(e, index)}>Save Player Name</button>
                         </form>
                         <h1>{this.state.players[index].whomSaved}</h1>
-                        <Counter/>
+                        <Counter _decrementTotalValue={this.props._decrementTotalValue} _incrementTotalValue = {this.props._incrementTotalValue}/>
                             </div>
                     )}
         

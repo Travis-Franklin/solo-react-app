@@ -19,6 +19,7 @@ class Counter extends React.Component{
         </div>)
     }
     _incrementValue = () => {
+            // this.props._decrementTotalValue;
             this.setState({
                 value: this.state.value + 1
             });
