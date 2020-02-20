@@ -16,6 +16,18 @@ class Player extends React.Component{
         };
 
     }
+    _incrementScore = (index) => {
+        let tempPlayer = [...this.state.players]
+        tempPlayer[index].scores = tempPlayer[index].scores + 1
+        this.setState({players: tempPlayer})
+    }
+    _decrementScore = (index) => {
+        let tempPlayer = [...this.state.players]
+        tempPlayer[index].scores = tempPlayer[index].scores - 1
+        this.setState({players: tempPlayer})
+    }
+
+
 
     static getDerivedStateFromProps(nextProps, prevState) {
         return {
@@ -76,20 +88,27 @@ class Player extends React.Component{
             <div >
                     {this.state.players.map((player, index) => 
                         <div className="playerBox">
-                        <form >
-                            <input type="text" onChange={(e)=> this.handleChange(e, index)}>
-                            </input>
-                            <button type="submit" onClick={(e) => this._AddPlayer(e, index)}>Save Player Name</button>
-                        </form>
-                                    <select id="color" onChange={(e)=> this.handleChangeColor(e, index)}>
-                                        <option value="red">red</option>
-                                        <option value="green">green</option>
-                                        <option value="blue">blue</option>
-                                        <option value="purple">purple</option>
-                                    </select>
-                        <h1>{this.state.players[index].whomSaved}</h1>
-                        <Counter _decrementTotalValue={this.props._decrementTotalValue} _incrementTotalValue = {this.props._incrementTotalValue}/>
-                            </div>
+                            <form >
+                                <input type="text" onChange={(e)=> this.handleChange(e, index)}>
+                                </input>
+                                <button type="submit" onClick={(e) => this._AddPlayer(e, index)}>Save Player Name</button>
+                            </form>
+                            <select id="color" onChange={(e)=> this.handleChangeColor(e, index)}>
+                                <option value="red">red</option>
+                                <option value="green">green</option>
+                                <option value="blue">blue</option>
+                                <option value="purple">purple</option>
+                            </select>
+                            <h1>{this.state.players[index].whomSaved}</h1>
+                            <Counter 
+                                playerIndex={index}
+                                player={player} 
+                                _decrementTotalValue={this.props._decrementTotalValue} 
+                                _incrementTotalValue = {this.props._incrementTotalValue}
+                                _decrementScore= {this._decrementScore}
+                                _incrementScore= {this._incrementScore}
+                                />
+                        </div>
                     )}
         
             </div>
