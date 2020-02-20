@@ -25,4 +25,12 @@ code {
 
 .playerBox {
   outline: 1px red solid;
+  padding: 10px;
+}
+
+.resultsBox {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
 }

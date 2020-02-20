@@ -50,7 +50,6 @@ class HowManyToWin extends React.Component{
                <h1>How Many Left: {this.state.numberRemaining}</h1>
                <div className="PlayersAndChart">
                <HowManyPlayers _decrementTotalValue={this._decrementTotalValue} _incrementTotalValue = {this._incrementTotalValue}/>
-              <h1>Future Chart Below</h1>
           </div>
             </div>
         )

@@ -1,5 +1,6 @@
 import React from 'react';
 import Counter from './Counter';
+import Graph from './Graph';
 
 class Player extends React.Component{
     constructor(props){
@@ -40,20 +41,15 @@ class Player extends React.Component{
         }
      }
     handleChange = (e, index) =>{
-        // console.log(`change:${index}`)
-        // console.log(e.target.value)
         let tempPlayer = [...this.state.players]
         tempPlayer[index].whom = e.target.value
         this.setState({players: tempPlayer})
     }
 
     handleChangeColor = (e, index) =>{
-        // console.log(`change:${index}`)
-        // console.log(e.target.value)
         let tempPlayer = [...this.state.players]
         tempPlayer[index].color = e.target.value
         this.setState({players: tempPlayer})
-        // console.log(e.target.value)
         console.log(this.state.players)
     }
 
@@ -82,10 +78,9 @@ class Player extends React.Component{
     }
 
     render() {
-        
-        // console.log(this.props);
         return (
-            <div >
+            <div>
+                <div className="resultsBox">
                     {this.state.players.map((player, index) => 
                         <div className="playerBox">
                             <form >
@@ -110,7 +105,17 @@ class Player extends React.Component{
                                 />
                         </div>
                     )}
-        
+                    <div>
+                    {this.state.players.map((player, index) =>
+                        <Graph 
+                        playerForGraph={player} 
+                        playerForGraphIndex={index}
+                        />
+
+                    )}
+                    </div>
+
+                     </div>
             </div>
         )
     }  

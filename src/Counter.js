@@ -1,13 +1,10 @@
 import React from 'react';
 
-//receive props from player and the write functions, add button to increment, decrement
-
 
 class Counter extends React.Component{
     constructor(props) {
         super(props);
         this.state = {
-            value: 0
         };
     }
     render () {
@@ -22,16 +19,11 @@ class Counter extends React.Component{
     _incrementValue = () => {
             this.props._incrementScore(this.props.playerIndex);
             this.props._decrementTotalValue();
-            this.setState({
-                value: this.state.value + 1
-            });
+
         }
     _decrementValue = () => {
         this.props._decrementScore(this.props.playerIndex);
         this.props._incrementTotalValue();
-        this.setState({
-            value: this.state.value - 1
-        });
     }
 };
 
