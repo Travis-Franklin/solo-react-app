@@ -6,7 +6,8 @@ class HowManyPlayers extends React.Component{
         super(props);
         this.state = {
             amountOfPlayers : "2",
-            saveAmountOfPlayers: "1"
+            saveAmountOfPlayers: "1",
+            
         };
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -26,18 +27,21 @@ class HowManyPlayers extends React.Component{
         
     }
     render (){
+        console.log(this.props, "look here")
         return (
             <div className="PlayerClass">
                 <div>
                 <form className="amountOfPlayersForm" onSubmit={this.handleSubmit}>
                 <input type="number" onChange={this.handleChange}>
-                
                 </input>
-
                 <button  onClick ={(e) => this._HowManyPlayers()}>Amount of Players</button>
                 </form>
                 </div>
-                <Player saveAmountOfPlayers={this.state.saveAmountOfPlayers} _decrementTotalValue={this.props._decrementTotalValue} _incrementTotalValue = {this.props._incrementTotalValue}/>
+                <Player 
+                    saveAmountOfPlayers={this.state.saveAmountOfPlayers}
+                    _decrementTotalValue={this.props._decrementTotalValue} 
+                    _incrementTotalValue = {this.props._incrementTotalValue}
+                />
             </div>
         )
     }
