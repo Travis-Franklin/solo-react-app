@@ -109,15 +109,13 @@ class Player extends React.Component{
                         </div>
                     )}
                     <div>
-                    {this.state.players.map((player, index) =>
                         <Graph 
                         numberToWinToPassDown = {this.props.numberToWinToPassDown}
                         numberRemainingToPassDown = {this.props.numberRemainingToPassDown}
-                        playerForGraph={player} 
-                        playerForGraphIndex={index}
+                        players = {this.state.players}
                         />
 
-                    )}
+                
                     </div>
 
                      </div>
