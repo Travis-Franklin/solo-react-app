@@ -78,6 +78,7 @@ class Player extends React.Component{
     }
 
     render() {
+        console.log('here for player', this.props)
         return (
             <div>
                 <div className="resultsBox">
@@ -96,6 +97,8 @@ class Player extends React.Component{
                             </select>
                             <h1>{this.state.players[index].whomSaved}</h1>
                             <Counter 
+                                numberToWinToPassDown = {this.props.numberToWinToPassDown}
+                                numberRemainingToPassDown = {this.props.numberRemainingToPassDown}
                                 playerIndex={index}
                                 player={player} 
                                 _decrementTotalValue={this.props._decrementTotalValue} 
@@ -108,6 +111,8 @@ class Player extends React.Component{
                     <div>
                     {this.state.players.map((player, index) =>
                         <Graph 
+                        numberToWinToPassDown = {this.props.numberToWinToPassDown}
+                        numberRemainingToPassDown = {this.props.numberRemainingToPassDown}
                         playerForGraph={player} 
                         playerForGraphIndex={index}
                         />

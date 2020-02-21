@@ -34,7 +34,7 @@ class HowManyToWin extends React.Component{
     _decrementTotalValue = () => {
         this.setState({
             numberRemaining: this.state.numberRemaining - 1
-        });
+        }, () => console.log(this.state.numberRemaining, "HERE"));
     }
 
     _numberRemainingPassDown = () => {
@@ -55,10 +55,13 @@ class HowManyToWin extends React.Component{
                <h1>How Many to Win: {this.state.saveNumber}</h1>
                <h1>How Many Left: {this.state.numberRemaining}</h1>
                <div className="PlayersAndChart">
-               <HowManyPlayers 
-               _numberRemainingPassDown={this._numberRemainingPassDown}
+               <HowManyPlayers
+                numberToWinToPassDown = {this.state.saveNumber}
+                numberRemainingToPassDown = {this.state.numberRemaining}
+                _numberRemainingPassDown={this._numberRemainingPassDown}
                 _decrementTotalValue={this._decrementTotalValue}
-                 _incrementTotalValue = {this._incrementTotalValue}/>
+                _incrementTotalValue = {this._incrementTotalValue}
+                />
           </div>
             </div>
         )

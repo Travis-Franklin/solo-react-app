@@ -38,9 +38,12 @@ class HowManyPlayers extends React.Component{
                 </form>
                 </div>
                 <Player 
+                    numberToWinToPassDown = {this.props.numberToWinToPassDown}
+                    numberRemainingToPassDown = {this.props.numberRemainingToPassDown}
                     saveAmountOfPlayers={this.state.saveAmountOfPlayers}
                     _decrementTotalValue={this.props._decrementTotalValue} 
                     _incrementTotalValue = {this.props._incrementTotalValue}
+                    
                 />
             </div>
         )

@@ -8,7 +8,7 @@ class Counter extends React.Component{
         };
     }
     render () {
-        console.log(this.props.player)
+        console.log(this.props, 'here for COUNTER')
         return (
         <div>
         <button onClick ={this._incrementValue}>+</button>
