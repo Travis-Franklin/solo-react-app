@@ -21,12 +21,21 @@ class HowManyPlayers extends React.Component{
     }
 
     _HowManyPlayers= () =>{
+        this._errorHandling();
         this.setState({
             saveAmountOfPlayers: this.state.amountOfPlayers
         })
         
     }
+
+    _errorHandling = () => {
+        if (this.props.numberToWinToPassDown === 0) {
+            alert("Must Enter Amount to Win!")
+        };
+    }
     render (){
+        // console.log(this.props.numberToWinToPassDown);
+        
         console.log(this.props, "look here")
         return (
             <div className="playerClass">
