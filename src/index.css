@@ -12,9 +12,19 @@ code {
     monospace;
 }
 
+html {
+  background: lightyellow;
+}
+
+p {
+  /* padding: 0 40px; */
+}
+
 .PlayersAndChart {
   display: flex;
   justify-content: space-around;
+  align-items: center;
+  margin: 10px;
 }
 
 .amountOfPlayersForm {
@@ -22,16 +32,33 @@ code {
   /* font-size: 30px; */
 }
 
+
+.containerForResultsBox {
+  background: teal;
+}
+
+.titleContainer{
+  display: flex;
+  flex-direction: column;
+
+}
+
 .playerBox {
+  /* display: flex; */
   outline: 1px red solid;
-  padding: 20px;
-  /* width: 25%;
-  display: ; */
+  padding: 10px;
+  width: 30%;
+}
+
+.playerClass {
+  display: flex;
+  flex-direction: column;
 }
 
 .resultsBox {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  align-items: center;
 
 }

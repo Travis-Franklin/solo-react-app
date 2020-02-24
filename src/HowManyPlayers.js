@@ -29,15 +29,16 @@ class HowManyPlayers extends React.Component{
     render (){
         console.log(this.props, "look here")
         return (
-            <div className="PlayerClass">
+            <div className="playerClass">
                 <div>
                     <h3>How Many Players:</h3>
-                <form className="amountOfPlayersForm" onSubmit={this.handleSubmit}>
-                <input type="number" onChange={this.handleChange}>
-                </input>
-                <button  onClick ={(e) => this._HowManyPlayers()}>Submit</button>
-                </form>
+                    <form className="amountOfPlayersForm" onSubmit={this.handleSubmit}>
+                        <input type="number" onChange={this.handleChange}>
+                        </input>
+                        <button  onClick ={(e) => this._HowManyPlayers()}>Submit</button>
+                    </form>
                 </div>
+                <div>
                 <Player 
                     numberToWinToPassDown = {this.props.numberToWinToPassDown}
                     numberRemainingToPassDown = {this.props.numberRemainingToPassDown}
@@ -46,6 +47,7 @@ class HowManyPlayers extends React.Component{
                     _incrementTotalValue = {this.props._incrementTotalValue}
                     
                 />
+                </div>
             </div>
         )
     }
