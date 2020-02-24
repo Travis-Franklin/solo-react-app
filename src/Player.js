@@ -8,7 +8,7 @@ class Player extends React.Component{
         this.state = {
             amountOfPlayers: "1",
             players: [{            
-                whom: "Player 1",
+                whom: "",
                 whomSaved: "",
                 scores: 0,
                 color: ""

@@ -14,7 +14,7 @@ code {
 
 .PlayersAndChart {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-around;
 }
 
@@ -30,7 +30,7 @@ code {
 
 .resultsBox {
   display: flex;
-  flex-direction: row;
+  flex-direction: column-reverse;
   justify-content: space-between;
 
 }

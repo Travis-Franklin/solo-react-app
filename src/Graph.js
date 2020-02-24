@@ -1,12 +1,7 @@
 import React from 'react';
 import Axios from 'axios';
-// import { tsConstructorType } from '@babel/types';
 
 const API_ENDPOINT = `https://quickchart.io/chart?c=${[]}`;
-
-// function urlForID(id) {
-//   return `https://swapi.co/api/people/${id}/`
-// }
 
 class Graph extends React.Component {
     constructor(props){
@@ -16,10 +11,12 @@ class Graph extends React.Component {
             chartInfo: {
                 type: 'pie',
                 data: {
+                // cutoutPercentage: 50,
                   labels:[],
                   datasets: [{
                     label: 'Scores',
-                    data: []
+                    data: [],
+                    backgroundColor: [],
                   }, ]
                 }
               }
@@ -41,14 +38,20 @@ class Graph extends React.Component {
         let tempInfo = this.state.chartInfo;
         let ArrayOfPlayers = [];
         let ArrayOfScores = [];
+        let ArrayOfColors = [];
+
         this.props.players.map((player) => {
-            console.log(player.whom);
             ArrayOfPlayers.push(player.whom);
             ArrayOfScores.push(player.scores);
+            ArrayOfColors.push(player.color);
+            console.log(ArrayOfColors);
 
         })
+        // push in a player still left
+        // push in still left score
         tempInfo.data.labels = ArrayOfPlayers;
         tempInfo.data.datasets[0].data = ArrayOfScores;
+        tempInfo.data.datasets[0].backgroundColor = ArrayOfColors;
         this.setState({chartInfo: tempInfo})
         console.log(ArrayOfScores);
         console.log(ArrayOfPlayers);
