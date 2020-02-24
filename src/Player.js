@@ -6,17 +6,26 @@ class Player extends React.Component{
     constructor(props){
         super(props);
         this.state = {
-            amountOfPlayers: "1",
+            amountOfPlayers: "",
             players: [{            
                 whom: "Player",
                 whomSaved: "",
                 scores: 0,
                 color: ""
             }]
-    
+            
         };
-
+        
     }
+
+    // _winner = () => {
+    //     let winningScore = Math.max(this.state.players.scores);
+    //     if (this.props.numberRemainingToPassDown === 0){
+    //         let winningPlayer = this.state.players.score === winningScore;
+    //         console.log(winningPlayer);
+    //         return (winningPlayer);
+    //     }
+    // }
     _incrementScore = (index) => {
         let tempPlayer = [...this.state.players]
         tempPlayer[index].scores = tempPlayer[index].scores + 1
@@ -66,6 +75,7 @@ class Player extends React.Component{
         }
         this.setState({players: tempPlayer})
     }
+
 
     _AddPlayer = (e, index) => {
         e.preventDefault();

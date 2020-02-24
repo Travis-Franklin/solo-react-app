@@ -13,13 +13,16 @@ class HowManyToWin extends React.Component{
         this.handleSubmit = this.handleSubmit.bind(this);
     }
     handleSubmit(event){
+        this._errorHandling();
         event.preventDefault();
     }
     handleChange(event){
+        // this._errorHandling();
         this.setState({number: event.target.value});
     }
 
     _SendHowMany = () => {
+        this._errorHandling();
         this.setState({
             saveNumber: Number(this.state.number),
             numberRemaining: Number(this.state.number)
@@ -41,6 +44,12 @@ class HowManyToWin extends React.Component{
         this.setState ({
             numberRemaining: this.state.numberRemaining
         })
+    }
+
+    _errorHandling = () => {
+        if (this.state.saveNumber < 0) {
+            alert("Amount Must be Greater than Zero")
+        };
     }
 
     render () {

@@ -5,8 +5,8 @@ class HowManyPlayers extends React.Component{
     constructor(props){
         super(props);
         this.state = {
-            amountOfPlayers : "2",
-            saveAmountOfPlayers: "1",
+            amountOfPlayers : "",
+            saveAmountOfPlayers: "",
             
         };
         this.handleChange = this.handleChange.bind(this);
@@ -32,6 +32,9 @@ class HowManyPlayers extends React.Component{
         if (this.props.numberToWinToPassDown === 0) {
             alert("Must Enter Amount to Win!")
         };
+        if (this.state.amountOfPlayers < 0){
+            alert("Amount of Players Must be Positive")
+        }
     }
     render (){
         // console.log(this.props.numberToWinToPassDown);

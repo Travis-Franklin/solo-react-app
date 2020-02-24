@@ -22,6 +22,8 @@ class Graph extends React.Component {
         }
 
     }
+
+
     static getDerivedStateFromProps(nextProps, prevState) {
         return {
            players: nextProps.players
@@ -33,6 +35,12 @@ class Graph extends React.Component {
            this.createNewChart()
         }
     }
+
+    // _winner = () => {
+    //     if (numberRemainingToPassDown === 0){
+    //         let winningPlayer = Math.max(ArrayOfScores)
+    //     }
+    // }
         createNewChart(){ 
         let tempInfo = this.state.chartInfo;
         let ArrayOfPlayers = [];
@@ -47,12 +55,12 @@ class Graph extends React.Component {
 
         })
 
-        ArrayOfPlayers.push("Still Remaining");
-        ArrayOfScores.push(this.props.numberToWinToPassDown);
-        ArrayOfColors.push("grey");
         tempInfo.data.labels = ArrayOfPlayers;
         tempInfo.data.datasets[0].data = ArrayOfScores;
         tempInfo.data.datasets[0].backgroundColor = ArrayOfColors;
+        ArrayOfPlayers.push("Still Remaining");
+        ArrayOfScores.push(this.props.numberRemainingToPassDown);
+        ArrayOfColors.push("grey");
         this.setState({chartInfo: tempInfo})
         console.log(ArrayOfScores);
         console.log(ArrayOfPlayers);

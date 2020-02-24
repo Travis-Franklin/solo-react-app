@@ -11,6 +11,7 @@ class Counter extends React.Component{
         console.log(this.props, 'here for COUNTER')
         return (
         <div>
+            <h3>Score:</h3>
         <button onClick ={this._incrementValue}>+</button>
         <button onClick ={this._decrementValue}>-</button>
         <h1>{this.props.player.scores}</h1>
