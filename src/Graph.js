@@ -9,11 +9,10 @@ class Graph extends React.Component {
         this.state = {
             players: this.props.players,
             chartInfo: {
-                type: 'pie',
+                type: 'doughnut',
                 data: {
-                // cutoutPercentage: 50,
-                  labels:[],
-                  datasets: [{
+                    labels:[],
+                    datasets: [{
                     label: 'Scores',
                     data: [],
                     backgroundColor: [],
@@ -47,8 +46,10 @@ class Graph extends React.Component {
             console.log(ArrayOfColors);
 
         })
-        // push in a player still left
-        // push in still left score
+
+        ArrayOfPlayers.push("Still Remaining");
+        ArrayOfScores.push(this.props.numberToWinToPassDown);
+        ArrayOfColors.push("grey");
         tempInfo.data.labels = ArrayOfPlayers;
         tempInfo.data.datasets[0].data = ArrayOfScores;
         tempInfo.data.datasets[0].backgroundColor = ArrayOfColors;

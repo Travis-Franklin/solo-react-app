@@ -8,7 +8,7 @@ class Player extends React.Component{
         this.state = {
             amountOfPlayers: "1",
             players: [{            
-                whom: "",
+                whom: "Player",
                 whomSaved: "",
                 scores: 0,
                 color: ""
@@ -80,20 +80,36 @@ class Player extends React.Component{
     render() {
         console.log('here for player', this.props)
         return (
-            <div>
+            <div className="containerForResultsBox">
+            <Graph 
+            numberToWinToPassDown = {this.props.numberToWinToPassDown}
+            numberRemainingToPassDown = {this.props.numberRemainingToPassDown}
+            players = {this.state.players}
+            />
                 <div className="resultsBox">
                     {this.state.players.map((player, index) => 
                         <div className="playerBox">
+                            <h3>Enter Player's Name:</h3>
                             <form >
                                 <input type="text" onChange={(e)=> this.handleChange(e, index)}>
                                 </input>
-                                <button type="submit" onClick={(e) => this._AddPlayer(e, index)}>Save Player Name</button>
+                                <button type="submit" onClick={(e) => this._AddPlayer(e, index)}>Save</button>
                             </form>
                             <select id="color" onChange={(e)=> this.handleChangeColor(e, index)}>
-                                <option value="red">red</option>
-                                <option value="green">green</option>
-                                <option value="blue">blue</option>
-                                <option value="purple">purple</option>
+                                
+                                <option value="">Pick A Color</option>
+                    
+                                <option value="blue">BLUE</option>
+                                <option value="green">GREEN</option>
+                                
+                                <option value="orange">ORANGE</option>
+                                <option value="pink">PINK</option>
+                                <option value="purple">PURPLE</option>
+                                <option value="red">RED</option>
+                                <option value="teal">TEAL</option>
+                                <option value="yellow">YELLOW</option>
+            
+                                
                             </select>
                             <h1>{this.state.players[index].whomSaved}</h1>
                             <Counter 
@@ -109,11 +125,6 @@ class Player extends React.Component{
                         </div>
                     )}
                     <div>
-                        <Graph 
-                        numberToWinToPassDown = {this.props.numberToWinToPassDown}
-                        numberRemainingToPassDown = {this.props.numberRemainingToPassDown}
-                        players = {this.state.players}
-                        />
 
                 
                     </div>

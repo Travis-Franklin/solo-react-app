@@ -14,7 +14,6 @@ code {
 
 .PlayersAndChart {
   display: flex;
-  flex-direction: column;
   justify-content: space-around;
 }
 
@@ -25,12 +24,14 @@ code {
 
 .playerBox {
   outline: 1px red solid;
-  padding: 10px;
+  padding: 20px;
+  /* width: 25%;
+  display: ; */
 }
 
 .resultsBox {
   display: flex;
-  flex-direction: column-reverse;
+  flex-direction: column;
   justify-content: space-between;
 
 }

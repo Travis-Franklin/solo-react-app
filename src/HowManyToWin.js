@@ -46,14 +46,15 @@ class HowManyToWin extends React.Component{
     render () {
         return(
             <div>
+            <h1>How Many to Win: {this.state.saveNumber}</h1>
+            <h1>How Many Left: {this.state.numberRemaining}</h1>
                <form onSubmit={this.handleSubmit}>
+                   <h3>Amount of Points to Win:</h3>
                    <input type="number" onChange={this.handleChange}>
                    </input>
                    <button type="submit" onClick={(e) => this._SendHowMany()}>
                    Submit</button>
                 </form>
-               <h1>How Many to Win: {this.state.saveNumber}</h1>
-               <h1>How Many Left: {this.state.numberRemaining}</h1>
                <div className="PlayersAndChart">
                <HowManyPlayers
                 numberToWinToPassDown = {this.state.saveNumber}

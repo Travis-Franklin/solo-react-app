@@ -31,10 +31,11 @@ class HowManyPlayers extends React.Component{
         return (
             <div className="PlayerClass">
                 <div>
+                    <h3>How Many Players:</h3>
                 <form className="amountOfPlayersForm" onSubmit={this.handleSubmit}>
                 <input type="number" onChange={this.handleChange}>
                 </input>
-                <button  onClick ={(e) => this._HowManyPlayers()}>Amount of Players</button>
+                <button  onClick ={(e) => this._HowManyPlayers()}>Submit</button>
                 </form>
                 </div>
                 <Player 
